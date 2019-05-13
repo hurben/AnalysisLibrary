@@ -35,31 +35,37 @@ def compare_per_line(file_1_readlines, file_2_readlines, MAX_LENGTH):
 
 	for i in range(MAX_LENGTH):
 
-		i_1_list = FL.DataHandling().tokenize_list(file_1_readlines[i], sep)
-		i_2_list = FL.DataHandling().tokenize_list(file_2_readlines[i], sep)
+		try :
+			i_1_list = FL.DataHandling().tokenize_list(file_1_readlines[i], sep)
+			i_2_list = FL.DataHandling().tokenize_list(file_2_readlines[i], sep)
 
-		LIST_MAX_LENGTH = compare_list_length(i_1_list, i_2_list)
+			LIST_MAX_LENGTH = compare_list_length(i_1_list, i_2_list)
 
-		if i_1_list != i_2_list:
+
+			if i_1_list != i_2_list:
 #------------FUTURE WORK-----------------
 #Instead of this stupid diff finding
 #I will implement list pattern matching. hope there is a dp for this
 #------------ BLOCK ---------------------
-		#IF1 : each lines is not identical
-			print "DIFF> LINE %s" % (i)
+			#IF1 : each lines is not identical
+				print "DIFF> LINE %s" % (i)
+				print '> %s' % file_1_readlines[i]
+				print '> %s' % file_2_readlines[i]
 
-			temp_list = []
+				temp_list = []
 
-			for j in range(LIST_MAX_LENGTH):
+				for j in range(LIST_MAX_LENGTH):
 
-				try:
-					if i_1_list[j] != i_2_list[j]:
-					#IF1-1 : each words are not identical
-						print '---- Word ID %s || %s  <--> %s' % (j, i_1_list[j], i_2_list[j])
-					else:
+					try:
+						if i_1_list[j] != i_2_list[j]:
+						#IF1-1 : each words are not identical
+							print '---- Word ID %s || %s  <--> %s' % (j, i_1_list[j], i_2_list[j])
+						else:
+							None
+					except IndexError:
 						None
-				except IndexError:
-					None
+		except IndexError:
+			print "Exceeding lines during comparison"
 
 
 #------------FUTURE WORK-----------------

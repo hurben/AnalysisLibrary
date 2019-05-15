@@ -1,0 +1,206 @@
+Loading <function_library.py>
+1210 : 1185
+DIFF> LINE 153
+> RNA-seq is the most popular technology that estimates the abundance of global mRNAs to find genes that is relevant to the experimental design.
+
+> RNA-seq is one of the popular technology that estimates the abundance of global mRNAs to find genes that is relevant to the experimental design.
+
+---- Word ID 2 || the  <--> one
+---- Word ID 3 || most  <--> of
+---- Word ID 4 || popular  <--> the
+---- Word ID 5 || technology  <--> popular
+---- Word ID 6 || that  <--> technology
+---- Word ID 7 || estimates  <--> that
+---- Word ID 8 || the  <--> estimates
+---- Word ID 9 || abundance  <--> the
+---- Word ID 10 || of  <--> abundance
+---- Word ID 11 || global  <--> of
+---- Word ID 12 || mRNAs  <--> global
+---- Word ID 13 || to  <--> mRNAs
+---- Word ID 14 || find  <--> to
+---- Word ID 15 || genes  <--> find
+---- Word ID 16 || that  <--> genes
+---- Word ID 17 || is  <--> that
+---- Word ID 18 || relevant  <--> is
+---- Word ID 19 || to  <--> relevant
+---- Word ID 20 || the  <--> to
+---- Word ID 21 || experimental  <--> the
+---- Word ID 22 || design.
+  <--> experimental
+DIFF> LINE 155
+> Therefore, the expression profile from RNA-seq data is generally analyzed by using multiple databases and methods in order to obtain useful knowledge.
+
+> Therefore, the expression profile from RNA-seq data is generally analyzed by using databases and methods in order to obtain useful knowledge.
+
+---- Word ID 12 || multiple  <--> databases
+---- Word ID 13 || databases  <--> and
+---- Word ID 14 || and  <--> methods
+---- Word ID 15 || methods  <--> in
+---- Word ID 16 || in  <--> order
+---- Word ID 17 || order  <--> to
+---- Word ID 18 || to  <--> obtain
+---- Word ID 19 || obtain  <--> useful
+---- Word ID 20 || useful  <--> knowledge.
+
+DIFF> LINE 159
+> However, it is largely difficult to pinpoint a gene with enough evidence to infer the relationship between the gene and phenotype in a single analysis.
+
+> However, it is largely difficult to pinpoint a gene with enough evidence to infer the relationship between the gene and phenotype in a single-step analysis.
+
+---- Word ID 23 || single  <--> single-step
+DIFF> LINE 162
+> To overcome the limitation of the single-step analysis, a number of studies have introduced a strategy that combinations multiple data sources and methods to compensate for the insufficient information of a single analysis (Figure \ref{gene_prioritization_workflow}).
+
+> To overcome the limitation of the single analysis, a number of studies have introduced a strategy that combinations multiple data sources and methods to compensate for the insufficient information of a single analysis (Figure \ref{gene_prioritization_workflow}).
+
+---- Word ID 6 || single-step  <--> single
+DIFF> LINE 171
+> However, there are a number of databases and analysis methods available for the transcriptome analysis, and the strategies of combining these elements have also been diversified (Figure \ref{gene_prioritization_methods}). 
+
+> However, the number of databases and analysis methods is now enormous, and the strategies of combining these elements have also been diversified (Figure \ref{gene_prioritization_methods}). 
+
+---- Word ID 1 || there  <--> the
+---- Word ID 2 || are  <--> number
+---- Word ID 3 || a  <--> of
+---- Word ID 4 || number  <--> databases
+---- Word ID 5 || of  <--> and
+---- Word ID 6 || databases  <--> analysis
+---- Word ID 7 || and  <--> methods
+---- Word ID 8 || analysis  <--> is
+---- Word ID 9 || methods  <--> now
+---- Word ID 10 || available  <--> enormous,
+---- Word ID 11 || for  <--> and
+---- Word ID 13 || transcriptome  <--> strategies
+---- Word ID 14 || analysis,  <--> of
+---- Word ID 15 || and  <--> combining
+---- Word ID 16 || the  <--> these
+---- Word ID 17 || strategies  <--> elements
+---- Word ID 18 || of  <--> have
+---- Word ID 19 || combining  <--> also
+---- Word ID 20 || these  <--> been
+---- Word ID 21 || elements  <--> diversified
+---- Word ID 22 || have  <--> (Figure
+---- Word ID 23 || also  <--> \ref{gene_prioritization_methods}).
+---- Word ID 24 || been  <--> 
+
+DIFF> LINE 172
+> Therefore, it is now a challenging task to find a strategy that has an appropriate combination to analyze the RNA-seq data tailored for the goal of analysis.
+
+> Therefore, it is now a challenging task to find a strategy that has an appropriate combination to analyze the RNA-seq data.
+
+---- Word ID 20 || data  <--> data.
+
+DIFF> LINE 174
+> My doctoral study addresses the challenges in analyzing RNA-seq data with three informatics systems that prioritize genes based on networks. 
+
+> This thesis addresses the challenges in analyzing RNA-seq data with three informatics systems that prioritize genes based on networks. 
+
+---- Word ID 0 || My  <--> This
+---- Word ID 1 || doctoral  <--> thesis
+---- Word ID 2 || study  <--> addresses
+---- Word ID 3 || addresses  <--> the
+---- Word ID 4 || the  <--> challenges
+---- Word ID 5 || challenges  <--> in
+---- Word ID 6 || in  <--> analyzing
+---- Word ID 7 || analyzing  <--> RNA-seq
+---- Word ID 8 || RNA-seq  <--> data
+---- Word ID 9 || data  <--> with
+---- Word ID 10 || with  <--> three
+---- Word ID 11 || three  <--> informatics
+---- Word ID 12 || informatics  <--> systems
+---- Word ID 13 || systems  <--> that
+---- Word ID 14 || that  <--> prioritize
+---- Word ID 15 || prioritize  <--> genes
+---- Word ID 16 || genes  <--> based
+---- Word ID 17 || based  <--> on
+---- Word ID 18 || on  <--> networks.
+---- Word ID 19 || networks.  <--> 
+
+DIFF> LINE 235
+> \section{My approach to address the challenges for the  analysis of  RNA-seq data}
+
+> \section{Solutions to the challenges while analyzing RNA-seq data}
+
+---- Word ID 0 || \section{My  <--> \section{Solutions
+---- Word ID 1 || approach  <--> to
+---- Word ID 2 || to  <--> the
+---- Word ID 3 || address  <--> challenges
+---- Word ID 4 || the  <--> while
+---- Word ID 5 || challenges  <--> analyzing
+---- Word ID 6 || for  <--> RNA-seq
+---- Word ID 7 || the  <--> data}
+
+DIFF> LINE 1178
+> 서울대학교 전기공학부 졸업논문 예제 파일입니다.
+
+> \end{abstractalt}
+
+---- Word ID 0 || 서울대학교  <--> \end{abstractalt}
+
+DIFF> LINE 1179
+> 서울대학교 전기공학부 졸업논문 예제 파일입니다.
+
+> 
+
+---- Word ID 0 || 서울대학교  <--> 
+
+DIFF> LINE 1180
+> 서울대학교 전기공학부 졸업논문 예제 파일입니다.
+
+> \acknowledgement
+
+---- Word ID 0 || 서울대학교  <--> \acknowledgement
+
+DIFF> LINE 1181
+> 서울대학교 전기공학부 졸업논문 예제 파일입니다.
+
+> Thanks!
+
+---- Word ID 0 || 서울대학교  <--> Thanks!
+
+DIFF> LINE 1182
+> 서울대학교 전기공학부 졸업논문 예제 파일입니다.
+
+> 
+
+---- Word ID 0 || 서울대학교  <--> 
+
+DIFF> LINE 1183
+> 서울대학교 전기공학부 졸업논문 예제 파일입니다.
+
+> \end{document}
+
+---- Word ID 0 || 서울대학교  <--> \end{document}
+
+DIFF> LINE 1184
+> 서울대학교 전기공학부 졸업논문 예제 파일입니다.
+
+> 
+
+---- Word ID 0 || 서울대학교  <--> 
+
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison
+Exceeding lines during comparison

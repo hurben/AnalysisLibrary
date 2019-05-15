@@ -8,16 +8,11 @@
 
 class FileHandling:
 
-	def file_to_dataframe(self, input_data, option):
-
+	def file_to_dataframe(self, input_text, option):
+	#Input : Dataframe
+	#Initial purpose : Machine learning ready data.
 		import pandas
-
-		print "> Loading pandas"
-		input_data = pandas.read_csv(input_text, sep=option, header=None)
-#		print "2 : "
-#		print input_data[1:2]
-#		print input_data['A']
-#		print input_data[input_data.columns[0]]
+		input_data = pandas.read_csv(input_text, sep=option)
 		
 		return input_data
 

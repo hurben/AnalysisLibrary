@@ -3,11 +3,14 @@
 #
 #objective : from given data. (probably various input)
 #
-#[1] create test dataset, training dataset
+#[1] create test dataset, training dataset as files
 #[2] Save each dataset as each file.
 #
-#
+#Consideration : Can be replaced by [sklearn.cross_validation][train_test_split] library
+#However, this script is more like a fine-tune
+#modfiable for balanced label retrieval
 #---------------------------------------------------
+from __future__ import division
 
 def get_iris_dataset():
 #get and save
@@ -31,7 +34,6 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 	MAX_COLUMNS = len(data_file.columns) - 1 #making zero-based
 	MAX_SAMPLE_LENGTH = len(data_file['label'])
 
-#	dataframe_without_label = data_file.ix[:,0:MAX_COLUMNS]
 	dataframe_dict = {}
 	label_count_dict = {} #zero-based
 
@@ -50,18 +52,22 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 
 		dataframe_dict[(i_label, label_count_dict[i_label])] = i_feature_data_list
 
-	test_dataframe_dict = {}
 
+##### Random Sampling datas
+	test_dataframe_dict = {}
 	import random
+	print '#> Starting Random Sampling-'
 	for i in label_index_list:
 		
 
 		i_label = i
 		LEN_LABEL_SAMPLES = label_count_dict[i]
 		SPLIT_RANGE = (LEN_LABEL_SAMPLES+1) / SPLIT_RATE
+		SPLIT_RANGE = int(round(SPLIT_RANGE))
+		print ("Label <%s> have <%s> samples."
+		"<%s> samples is discarded for test data") % (i_label, LEN_LABEL_SAMPLES, SPLIT_RANGE)
 
 		popup_index_list = random.sample(range(LEN_LABEL_SAMPLES + 1), SPLIT_RANGE)
-		print i,'/' ,len(popup_index_list)
 
 		for j in popup_index_list:
 
@@ -71,16 +77,19 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 
 		for j in popup_index_list:
 			dataframe_dict.pop((i_label, j))
-
+	print '#-------------------------'
+#####
 
 	header_list = list(data_file.columns.values)
 
 	dataframe_dict = make_dataframe_with_label_dict(dataframe_dict)
 	test_dataframe_dict = make_dataframe_with_label_dict(test_dataframe_dict)
 
-	organize_dict_to_pandas(dataframe_dict, header_list)
-	organize_dict_to_pandas(test_dataframe_dict, header_list)
+	training_dataframe = organize_dict_to_pandas(dataframe_dict, header_list)
+	test_dataframe = organize_dict_to_pandas(test_dataframe_dict, header_list)
 
+	create_data_files('train', training_dataframe)
+	create_data_files('test', test_dataframe)
 
 def make_dataframe_with_label_dict(dataframe_dict):
 
@@ -103,7 +112,25 @@ def organize_dict_to_pandas(dataframe_dict, header_list):
 	dataframe = pd.DataFrame.from_dict(dataframe_dict, orient='index')
 	dataframe.columns = header_list
 
+	return dataframe
 
+
+def create_data_files(datatype, dataframe):
+
+	import pandas as pd
+	
+	index = 1 
+	loop_break = 0
+	while loop_break == 0:	
+		data_file = '%s.data.%s' % (datatype, index)
+
+		if os.path.isfile(data_file) == True:
+			index += 1
+			data_file = '%s.data.%s' % (datatype, index)
+		else:
+			loop_break = 1
+
+	dataframe.to_csv(data_file, sep="\t", index=False)
 
 	
 
@@ -121,14 +148,23 @@ if __name__ == "__main__":
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-i', '--input', dest = 'input_file')
 	parser.add_argument('-s', '--splitrate', dest = 'split_rate')
+	parser.add_argument('-n', '--number_of_sets', dest = 'number_of_sets')
 
 	args = parser.parse_args()
 	input_file = args.input_file
 	SPLIT_RATE  = int(args.split_rate)
+	NUMBER_OF_SETS  = args.number_of_sets
 	#input: should be dataframe that can be handled by pandas
 
-#	input_data = FL.FileHandling().file_to_dataframe(input_file,'\t')
-	split_train_and_test_dataset(input_file, SPLIT_RATE)
+	if NUMBER_OF_SETS == None:
+		NUMBER_OF_SETS = 1
+		split_train_and_test_dataset(input_file, SPLIT_RATE)
+
+	else: 	
+		NUMBER_OF_SETS = int(NUMBER_OF_SETS)
+
+		for i in range(NUMBER_OF_SETS):
+			split_train_and_test_dataset(input_file, SPLIT_RATE)
 
 	
 

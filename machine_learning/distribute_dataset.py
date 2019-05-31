@@ -28,11 +28,6 @@ def get_iris_dataset():
 
 def split_train_and_test_dataset(data_file, SPLIT_RATE):
 
-	data_file = FL.FileHandling().file_to_dataframe(data_file, '\t')
-
-	#check whether data_file has nan value
-	data_file = handle_NAN(data_file)
-
 	label_index_list = list(set(data_file['label']))
 	MAX_COLUMNS = len(data_file.columns) - 1 #making zero-based
 	MAX_SAMPLE_LENGTH = len(data_file['label'])
@@ -59,7 +54,10 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 ##### Random Sampling datas
 	test_dataframe_dict = {}
 	import random
-	print '#> Starting Random Sampling-'
+	sampling_counter = 1
+	print '#> Starting Random Sampling- %s' % sampling_counter
+	sampling_counter += 1
+
 	for i in label_index_list:
 		
 
@@ -197,6 +195,10 @@ if __name__ == "__main__":
 	NUMBER_OF_SETS  = args.number_of_sets
 	#input: should be dataframe that can be handled by pandas
 
+	#data handling
+	data_file = FL.FileHandling().file_to_dataframe(input_file, '\t')
+	data_file = handle_NAN(data_file)
+
 	if NUMBER_OF_SETS == None:
 		NUMBER_OF_SETS = 1
 		split_train_and_test_dataset(input_file, SPLIT_RATE)
@@ -205,7 +207,7 @@ if __name__ == "__main__":
 		NUMBER_OF_SETS = int(NUMBER_OF_SETS)
 
 		for i in range(NUMBER_OF_SETS):
-			split_train_and_test_dataset(input_file, SPLIT_RATE)
+			split_train_and_test_dataset(data_file, SPLIT_RATE)
 
 	
 

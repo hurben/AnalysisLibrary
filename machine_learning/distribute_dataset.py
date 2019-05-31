@@ -30,6 +30,9 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 
 	data_file = FL.FileHandling().file_to_dataframe(data_file, '\t')
 
+	#check whether data_file has nan value
+	data_file = handle_NAN(data_file)
+
 	label_index_list = list(set(data_file['label']))
 	MAX_COLUMNS = len(data_file.columns) - 1 #making zero-based
 	MAX_SAMPLE_LENGTH = len(data_file['label'])
@@ -91,6 +94,44 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 	create_data_files('train', training_dataframe)
 	create_data_files('test', test_dataframe)
 
+
+def handle_NAN(dataframe):
+
+#	feature names
+#	print dataframe.columns
+
+#	feature names with true/false (nan)
+#	print dataframe.isnull().any()
+
+#	feature names onl with true (nan)
+#	print dataframe.columns[dataframe.isnull().any()]
+
+#	feature_with_nan = dataframe.columns[dataframe.isnull().any()].tolist()
+
+#	print feature_with_nan[0]
+#	mean = dataframe[feature_with_nan[0]].mean(skipna = True)
+#	dataframe[feature_with_nan[0]] = dataframe[feature_with_nan[0]].fillna(mean)
+
+	if dataframe.isnull().values.any() == True:
+		print "We found there are Nan values in certain features"
+		print "How should we handle this? Type specific number"
+		print "< 1 > Use feature means for missing values"
+		print "< 2 > Exclude that sample"
+		option = int(input("Which one? : "))
+
+		if option == 1:
+			feature_with_nan = dataframe.columns[dataframe.isnull().any()].tolist()
+
+			for feature_name in feature_with_nan:
+				mean = dataframe[feature_name].mean(skipna = True)
+				dataframe[feature_name] = dataframe[feature_name].fillna(mean)
+
+		if option == 2:
+			None
+
+	return dataframe
+
+
 def make_dataframe_with_label_dict(dataframe_dict):
 
 	dataframe_with_label_dict = {}
@@ -122,11 +163,11 @@ def create_data_files(datatype, dataframe):
 	index = 1 
 	loop_break = 0
 	while loop_break == 0:	
-		data_file = '%s.data.%s' % (datatype, index)
+		data_file = '%s.set.%s' % (datatype, index)
 
 		if os.path.isfile(data_file) == True:
 			index += 1
-			data_file = '%s.data.%s' % (datatype, index)
+			data_file = '%s.set.%s' % (datatype, index)
 		else:
 			loop_break = 1
 

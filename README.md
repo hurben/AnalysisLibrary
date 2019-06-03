@@ -37,13 +37,23 @@ Comparing micro revised texs (comments, grammer correction.. etc)
 2. write test dataset & training dataset each files.
 
 
-## machine_learning/run_classification.py.py 
+## machine_learning/run_classification.py.
 
 
 
 >objective : run classification from divided data
 
 1. from file that contains list of train & test dataset.
+
+	-i [input file] (file lists of train and test data)
+	row = data set
+	column = train data, test data (tab sep)
+
+	-m [method] 
+	classification methods, such as DecisionTree
+
+
+
 2. perform classification from given method
 
 >Current imported methods

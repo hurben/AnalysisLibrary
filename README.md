@@ -33,3 +33,23 @@ General convenience for my own.
 |	N will be defined from number of random sets
 |
 |[2] write test dataset & training dataset each files.
+
+
+## machine_learning/run_classification.py.py 
+
+
+
+>objective : run classification from divided data
+|
+|[1] from file that contains list of train & test dataset.
+|[2] perform classification from given method
+|
+|>>Current imported methods
+|  >"tree" = DecisionTreeClassifier  19.06.01
+|  >
+|  >
+
+
+
+
+

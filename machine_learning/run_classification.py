@@ -3,7 +3,13 @@
 #
 #objective : run classification from divided data
 #
+#[1] from file that contains list of train & test dataset.
+#[2] perform classification from given method
 #
+#>>Current imported methods
+#  >"tree" = DecisionTreeClassifier	 19.06.01
+#  >
+#  >
 #
 #---------------------------------------------------
 

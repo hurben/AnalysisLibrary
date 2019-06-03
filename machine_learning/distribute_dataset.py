@@ -50,13 +50,10 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 
 		dataframe_dict[(i_label, label_count_dict[i_label])] = i_feature_data_list
 
-
 ##### Random Sampling datas
 	test_dataframe_dict = {}
 	import random
-	sampling_counter = 1
-	print '#> Starting Random Sampling- %s' % sampling_counter
-	sampling_counter += 1
+	print '#> Starting Random Sampling- %s' 
 
 	for i in label_index_list:
 		

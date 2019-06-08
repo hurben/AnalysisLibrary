@@ -30,14 +30,24 @@ def test_run():
 	y = test_dataframe.iloc[:,-1].values
 	#x = values
 	#y = labels
+	print test_dataframe.columns
 
 	for i in range(10):
 		x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
-		print y_test
+		#print y_test
 		classifier = DecisionTreeClassifier()
 		classifier.fit(x_train,y_train)
+		print '#####'
+		print classifier.feature_importances_
+		print '#####'
+
 		y_pred = classifier.predict(x_test)
+
+		print classifier.feature_importances_
+
 		generateClassificationReport(y_test,y_pred)
+		print 'end'
+		quit()
 
 
 def main(input_file, method):
@@ -107,6 +117,4 @@ if __name__ == "__main__":
 	#...
 	#train5<\t>test5<\n>
 
-#	test_run()
-	
 	main(input_file, method)	

@@ -59,5 +59,5 @@ if __name__ == "__main__":
 	FileHandling().read_file(input_file, sep_type) 
 
 else:
-	print "Loading <function_library.py>"
+	print ("Loading <function_library.py>")
 

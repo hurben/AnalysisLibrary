@@ -56,16 +56,16 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 ##### Random Sampling datas
 	test_dataframe_dict = {}
 	import random
-	print '#> Starting Random Sampling-'
+	print ('#> Starting Random Sampling-')
 	for i in label_index_list:
-		
 
 		i_label = i
 		LEN_LABEL_SAMPLES = label_count_dict[i]
-		SPLIT_RANGE = (LEN_LABEL_SAMPLES+1) / SPLIT_RATE
+		SPLIT_RANGE = (LEN_LABEL_SAMPLES+1) * SPLIT_RATE
 		SPLIT_RANGE = int(round(SPLIT_RANGE))
+		print ("SPLIT RATE : <%s>  // SPLIT RANGE: <%s>" % (SPLIT_RATE, SPLIT_RANGE))
 		print ("Label <%s> have <%s> samples."
-		"<%s> samples is discarded for test data") % (i_label, LEN_LABEL_SAMPLES, SPLIT_RANGE)
+		"<%s> samples is discarded for test data" % (i_label, LEN_LABEL_SAMPLES, SPLIT_RANGE))
 
 		popup_index_list = random.sample(range(LEN_LABEL_SAMPLES + 1), SPLIT_RANGE)
 
@@ -77,7 +77,7 @@ def split_train_and_test_dataset(data_file, SPLIT_RATE):
 
 		for j in popup_index_list:
 			dataframe_dict.pop((i_label, j))
-	print '#-------------------------'
+	print ('#-------------------------')
 #####
 
 	header_list = list(data_file.columns.values)
@@ -152,7 +152,7 @@ if __name__ == "__main__":
 
 	args = parser.parse_args()
 	input_file = args.input_file
-	SPLIT_RATE  = int(args.split_rate)
+	SPLIT_RATE  = float(args.split_rate)
 	NUMBER_OF_SETS  = args.number_of_sets
 	#input: should be dataframe that can be handled by pandas
 

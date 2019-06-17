@@ -1,5 +1,5 @@
-train.data.1	test.data.1
-train.data.2	test.data.2
-train.data.3	test.data.3
-train.data.4	test.data.4
-train.data.5	test.data.5
+/home/hurben/AnalysisLibrary/machine_learning/test_run/train.data.1	/home/hurben/AnalysisLibrary/machine_learning/test_run/test.data.1
+/home/hurben/AnalysisLibrary/machine_learning/test_run/train.data.2	/home/hurben/AnalysisLibrary/machine_learning/test_run/test.data.2
+/home/hurben/AnalysisLibrary/machine_learning/test_run/train.data.3	/home/hurben/AnalysisLibrary/machine_learning/test_run/test.data.3
+/home/hurben/AnalysisLibrary/machine_learning/test_run/train.data.4	/home/hurben/AnalysisLibrary/machine_learning/test_run/test.data.4
+/home/hurben/AnalysisLibrary/machine_learning/test_run/train.data.5	/home/hurben/AnalysisLibrary/machine_learning/test_run/test.data.5

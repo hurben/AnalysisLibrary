@@ -1,0 +1,30 @@
+INDEPENDANT	62
+TP_GENE	RANK	CONDITION
+Ucp1	N/A	N/A
+Cidea	46	2
+Acsm3	N/A	N/A
+Pdk4	55	2
+Cpt1b	14	2
+Acads	4	2
+Acadm	12	2
+Acadl	11	2
+Acadvl	7	2
+Hadha	19	2
+Hadhb	17	2
+Cox7a1	N/A	N/A
+Cox8b	N/A	N/A
+DEPENDANT
+TP_GENE	RANK	CONDITION
+Ucp1	N/A	N/A
+Cidea	17	2
+Acsm3	N/A	N/A
+Pdk4	8	2
+Cpt1b	49	2
+Acads	59	2
+Acadm	51	2
+Acadl	52	2
+Acadvl	56	2
+Hadha	44	2
+Hadhb	46	2
+Cox7a1	N/A	N/A
+Cox8b	N/A	N/A
